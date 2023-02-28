@@ -1,0 +1,25 @@
+{
+  "name": "blog.discordbot.jp",
+  "version": "5.4.1",
+  "description": "Deploy Ghost v4 on Railway",
+  "main": "index.js",
+  "author": "Discord Bot Portal JP",
+  "license": "MIT",
+  "engines": {
+    "node": "16.X"
+  },
+  "dependencies": {
+    "casper": "github:TryGhost/Casper#main",
+    "ease": "github:TryGhost/ease#main",
+    "ghost": "5.4.1",
+    "ghost-storage-cloudinary": "2.2.5",
+    "lyra": "github:TryGhost/lyra#main",
+    "mysql2": "3.1.2",
+    "ruby": "github:TryGhost/ruby#main",
+    "journal": "github:TryGhost/journal#main"
+  },
+  "scripts": {
+    "start": "bin/create-config && node index.js",
+    "postinstall": "bin/alter-auth-method && bash bin/cloudinary.sh && bash bin/themes.sh"
+  }
+}
